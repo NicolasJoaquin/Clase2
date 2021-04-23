@@ -1,0 +1,25 @@
+h1 {
+	font-size: 30px;
+	color: darkblue;
+	text-align: center;
+}
+
+	h1.Titulo {
+		font-size: 45px;
+		color: black;
+		text-align: center;
+		border-top-style: solid;
+		border-bottom-style: solid;
+		margin-bottom: 65px;
+	}
+
+p {
+	text-align: left;
+	font-size: 18px;
+	color: blue;
+	font-style: italic;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-width: thin;
+	border-color: blue;
+}

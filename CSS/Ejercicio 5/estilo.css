@@ -1,0 +1,41 @@
+﻿body.Body100 {
+    height: 100%;
+}
+
+h1.Titulo {
+    font-size: 45px;
+    color: black;
+    text-align: center;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    margin-bottom: 65px;
+}
+
+div#Cont1 {
+    
+    margin: auto;
+    width: 450px;
+    height: 450px;
+    background-color: lightblue;
+    padding-left: 50px;
+    padding-right: 100px;
+    padding-top: 50px;
+    
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: royalblue;
+}
+
+div#Cont2 {
+    opacity: 0.5;
+    overflow: auto;
+    width: 300px;
+    height: 350px;
+    background-image: url('./gif.gif');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    border-style: solid;
+    border-color: darkred;
+    border-top-left-radius: 25px;
+}

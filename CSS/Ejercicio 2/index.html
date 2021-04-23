@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" style="height:100%">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>Selectores de Clase</title>
+    <style>
+        h1.Titulo {
+            font-size: 45px;
+            color: black;
+            text-align: center;
+            border-top-style: solid;
+            border-bottom-style: solid;
+            margin-bottom: 65px;
+        }
+
+        body.Clase100 {
+            height: 100%;
+        }
+        p{
+            margin-bottom: 60px;
+        }
+
+        p.ClaseContenidoComun{
+            font-size: 12px;
+        }
+
+        p.ClaseDestacado {
+            font-size: 16px;
+            color: black;
+            font-weight: 700;
+        }
+
+        p.ClaseAcotacion {
+            text-align: center;
+            font-size: 18px;
+            color: blue;
+            font-style: italic;
+            border-style: solid;
+            border-width: thin;
+            border-color: blue;
+            line-height: 50px;
+        }
+
+        p.ClaseAyuda {
+            max-width: 50%;
+            text-align: center;
+            font-size: 18px;
+            color: orange;
+            font-style: italic;
+            border-style: solid;
+            border-width: thin;
+            border-color: orange;
+        }
+
+        p#idUnico {
+            max-width: 30%;
+            text-align: center;
+            color: red;
+            font-size: 14px;
+            font-style: italic;
+            border-style: solid;
+            border-width: thin;
+            border-color: red;
+        }
+
+        span.ClaseDestacado {
+            font-size: 16px;
+            color: black;
+            font-weight: 700;
+        }
+
+        img.ImgAl50 {
+            max-width: 50%;
+        }
+
+
+    </style>
+</head>
+<body class="Clase100">
+    <h1 class="Titulo">Ejercicio N°2 CSS - Selectores de Clase</h1>
+        
+
+    <p class="ClaseContenidoComun">
+        párrafo con clase "ClaseContenidoComun"
+        <br />
+        <span class="ClaseDestacado">
+            Etiqueta span con clase "ClaseDestacado" dentro del párrafo
+        </span>
+    </p>
+
+    <p class="ClaseAcotacion">
+        Contenido en un párrafo con clase "ClaseAcotacion"
+        <br/>
+        Segunda linea del párrafo, demostración de atributo "line-height" (50px)
+    </p>
+
+    <p class="ClaseDestacado">
+        Contenido en un párrafo con clase "ClaseDestacado"
+    </p>
+
+    <p class="ClaseAyuda">
+        Contenido en un párrafo con clase "ClaseAyuda"
+    </p>
+
+    <p class="ClaseContenidoComun">
+        Contenido en un párrafo con clase "ClaseContenidoComun"
+    </p>
+    
+    <p id="idUnico">
+        Contenido en un párrafo con id "idUnico"
+    </p>
+
+    <h1>
+        A continuación, imagen con class = "ImgAl50" que ocupa como máximo el 50% del viewport independientemente de las dimensiones reales de la imagen
+    </h1>
+
+    <img class="ImgAl50" src="./img.jpg" />
+
+</body>
+</html>
