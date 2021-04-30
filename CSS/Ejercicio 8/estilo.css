@@ -1,0 +1,96 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 8px;
+    font-size: 100%;
+}
+
+img {
+    float: left;
+    max-width: 80%;
+    max-height: 50%;
+    margin-right: 1%;
+}
+
+div.nuevaFila {
+    clear: both;
+    margin-bottom: 20px;
+}
+
+div#Mediano {
+    float: left;
+    margin: 10px;
+    font-size: 12px;
+    /*display: flex;
+    justify-content: center;
+    align-items: center;*/
+    padding: 40px 40px 40px 40px;
+    width: 30%;
+    height: 500px;
+    background-color: lightblue;
+    box-sizing: border-box;
+    /*padding-left: 30%;
+    padding-right: 30%;*/
+    /*vertical-align: text-bottom;*/
+}
+
+div#Chico {
+    float: left;
+    margin: 10px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 200px;
+    background-color: lightblue;
+    box-sizing: border-box;
+}
+
+div#Grande {
+    float: left;
+    margin: 10px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 500px;
+    background-color: lightblue;
+    box-sizing: border-box;
+}
+
+/*div#ChicoFN {
+    float: left;
+    margin: 10px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 200px;
+    background-color: lightblue;
+    box-sizing: border-box;*/
+    /*clear: both;
+    margin-bottom: 20px;*/
+/*}*/
+
+div.ContenedorAzul {
+    background-color: lightcyan;
+    width: 85%;
+    margin: auto;
+    padding-left: 3%;
+    padding-right: 3%;
+    box-sizing:border-box;
+    height: 1025px;
+}
+
+img#uno {
+    clear: both;
+}
+h1 {
+    font-size: 40px;
+    color: black;
+    font-weight: 700;
+}
