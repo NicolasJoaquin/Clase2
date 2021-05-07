@@ -1,0 +1,63 @@
+﻿body {
+    background-color:blue;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 8px;
+    font-size: 100%;
+}
+
+h1 {
+    font-size: 35px;
+    color: black;
+    font-weight: 700;
+}
+
+div.ContenedorBlanco {
+    background-color: white;
+    width: 90%;
+    margin: auto;
+}
+
+div.Contenedor1{
+    width:75%;
+    background-color:forestgreen;
+    margin-bottom:5px;
+    font-size:35px;
+}
+
+div.Contenedor2 {
+    width: 50%;
+    background-color: yellow;
+    margin-top: 30px;
+    font-size: 30px;
+    margin-left: 20%;
+}
+
+div.Contenedor3 {
+    width: 50%;
+    height:150px;
+    background-color: orangered;
+    margin-top: 15px;
+    font-size: 30px;
+    margin-left: 20%;
+    overflow: auto;
+    margin-left: 30%;
+}
+
+div.Ventana {
+    position: fixed;
+    Width: 50%;
+    Height: 300px;
+    top: 20%;
+    left: 25%;
+    opacity: 0.65;
+    overflow-y: auto;
+    visibility: visible;
+    z-index: 10;
+    font-size: 18px;
+    background-color:darkslategray;
+}

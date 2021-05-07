@@ -1,0 +1,94 @@
+﻿div.ContenedorAzul {
+    background-color: dodgerblue;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 8px;
+    font-size: 100%;
+}
+
+div.header {
+    height: 5%;
+    width:100%;
+    background-color: dodgerblue;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+}
+
+[campo-dato='Id'] {
+    width: 5vw;
+}
+[campo-dato='Nick'] {
+    width: 10vw;
+}
+[campo-dato='Mail'] {
+    width: 30vw;
+}
+[campo-dato='Twitter'] {
+    width: 15vw;
+}
+[campo-dato='Skype'] {
+    width: 10vw;
+}
+th,tr{
+    height:50px;
+}
+th{
+    color:white;
+}
+
+@media (max-width:1200px) {
+    [campo-dato='Skype'] {
+        display: none;
+    }
+}
+
+@media (max-width:900px) {
+    [campo-dato='Twitter'] {
+        display: none;
+    }
+}
+
+@media (max-width:700px) {
+    [campo-dato='Mail'] {
+        display: none;
+    }
+}
+
+tbody tr:nth-child(odd) {
+    background: rgba(0,0,0,.2);
+}
+
+thead {
+    background-color: lightpink;
+    width: 100%;
+    height:55px;
+    position: fixed;
+    top:5%;
+    z-index:2;
+}
+
+tbody {
+    background-color: aquamarine;
+    width: 100%;
+
+    /* height:200px;*/
+}
+
+.tabla{
+    height:20vw;
+    overflow:auto;
+}

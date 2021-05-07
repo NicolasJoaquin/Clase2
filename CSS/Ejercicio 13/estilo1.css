@@ -1,0 +1,34 @@
+
+body{
+	height:100%;
+}
+
+h1.Titulo {
+	font-size: 45px;
+	color: black;
+	text-align: center;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	margin-bottom: 65px;
+}
+
+div.ElementoCentrado {
+	margin: auto; 
+	width: 50%; 
+	background-color: lightblue;
+}
+div.Padding {
+	margin: auto;
+	width: 50%;
+	background-color: lightgreen;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+div.BoxS{
+	margin: auto;
+	width: 50%;
+	background-color: lightgray;
+	padding-left: 10%;
+	padding-right: 10%;
+	box-sizing: border-box;
+}
