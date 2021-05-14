@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="./estilo.css">
+    <title>Funciones Compartidas</title>
+</head>
+<body>
+    <div class="ContenedorPrincipal">
+        <div class="input">
+            <input type="number" id="In">
+        </div>
+        <div class="botones1">
+            <button id="uno">1</button>
+            <button id="dos">2</button>
+            <button id="tres">3</button>
+            <button id="cuatro">4</button>
+            <button id="cinco">5</button>
+            <button id="seis">6</button>
+            <button id="siete">7</button>
+            <button id="ocho">8</button>
+            <button id="nueve">9</button>
+        </div>
+        <div class="botones2">
+            <button id="mas">+</button>
+            <button id="acum">Muestra Acumulador</button>
+            <button id="deleteAcum">Borra Acumulador</button>
+            <button id="deleteDisplay">Borra Display</button>
+        </div>
+
+        </div>
+
+        <script>
+            var acumulador = 0;
+
+            document.getElementById("uno").onclick = function () {
+                document.getElementById("In").value = document.getElementById("In").value + 1;
+            }
+
+            document.getElementById("dos").onclick = function () {
+                document.getElementById("In").value = document.getElementById("In").value + 2;
+            }
+
+            document.getElementById("tres").onclick = function () {
+                document.getElementById("In").value = document.getElementById("In").value + 3;
+            }
+
+            document.getElementById("cuatro").onclick = function () {
+                document.getElementById("In").value = document.getElementById("In").value + 4;
+            }
+
+            document.getElementById("cinco").onclick = function () {
+                document.getElementById("In").value = document.getElementById("In").value + 5;
+            }
+
+            document.getElementById("seis").onclick = function () {
+                document.getElementById("In").value = document.getElementById("In").value + 6;
+            }
+
+            document.getElementById("siete").onclick = function () {
+                document.getElementById("In").value = document.getElementById("In").value + 7;
+            }
+
+            document.getElementById("ocho").onclick = function () {
+                document.getElementById("In").value = document.getElementById("In").value + 8;
+            }
+
+            document.getElementById("nueve").onclick = function () {
+                document.getElementById("In").value = document.getElementById("In").value + 9;
+            }
+
+            document.getElementById("mas").onclick = function () {
+                acumulador = acumulador + parseInt(document.getElementById("In").value);
+                document.getElementById("In").value = "";
+            }
+
+            document.getElementById("acum").onclick = function () {
+                alert("El valor del acumulador es: " + acumulador + "");
+            }
+
+            document.getElementById("deleteAcum").onclick = function () {
+                acumulador = 0;
+            }
+
+            document.getElementById("deleteDisplay").onclick = function () {
+                document.getElementById("In").value = "";
+            }
+        </script>
+</body>
+</html>

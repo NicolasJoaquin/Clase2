@@ -1,0 +1,89 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 8px;
+    font-size: 100%;
+}
+
+html, body {
+    height: 100%;
+    width:100%;
+    margin:0%;
+    padding: 0%;
+}
+
+div.ContenedorPrincipal {
+    background-color: lightgray;
+    max-height: 50%;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    margin-top:10%;
+    
+}
+
+input {
+    
+    width: 100%;
+    
+}
+
+div.input{
+    width:90%;
+    height:30px;
+    margin-top:10px;
+}
+
+div.botones1 {
+    background-color: lightblue;
+    width: 90%;
+    height: 40%;
+    display: flex;
+    justify-content: space-around;
+    /*align-items: center;*/
+    flex-wrap:wrap;
+}
+
+.botones1 button{
+    width:25%;
+    margin: 1%;
+}
+
+div.botones2 {
+    background-color: wheat;
+    width: 90%;
+    height: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom:2%;
+}
+
+.botones2 button{
+    width:45%;
+    max-height:45%;
+    margin:1%;
+}
+
+
+/*div#one, div#two, div#three, div#four, div#five, div#six, div#seven, div#eight, div#nine {
+    width: 30%;
+    height: 25px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button#uno, button#dos, button#tres, button#cuatro, button#cinco, button#seis, button#siete, button#ocho, button#nueve {
+    width: 100%;
+    height: 25px;
+}
+div#four, div#seven {
+    clear: both;
+    margin-bottom: 10px;
+}*/

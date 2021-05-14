@@ -1,0 +1,49 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 8px;
+    font-size: 100%;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+}
+
+div.ContenedorPrincipal {
+    background-color: lightblue;
+    max-height: 40%;
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0%;
+}
+
+#entrada {
+    text-align: center;
+    height: 80px;
+    width: 250px;
+    border-style: solid;
+    border-color: gray;
+    border-width: 1px;
+    padding: 1%;
+    margin: 2%;
+    background-color: cornflowerblue;
+}
+
+div.header {
+    height: 10%;
+    width:60%;
+    margin:auto;
+    margin-top:10%;
+    background-color: cornflowerblue;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

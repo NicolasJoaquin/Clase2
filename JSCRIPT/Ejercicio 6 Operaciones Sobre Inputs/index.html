@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Operaciones Sobre Input</title>
+</head>
+<body>
+    <h1>
+        Operaciones Sobre Input
+    </h1>
+    <input type="text" id="In">
+    <button id="muestraValor">Muestra Valor</button>
+    <button id="suma1">Suma 1</button>
+    <button id="elevaCuadrado">x**2</button>
+    <button id="porDos">Multiplica * 2</button>
+    <button id="dosALaX">2**x</button>
+    <script>
+        document.getElementById("muestraValor").onclick = function () {
+            alert("El valor dentro del input es:" + document.getElementById("In").value +"");
+        }
+
+        document.getElementById("suma1").onclick = function () {
+            document.getElementById("In").value = parseInt(document.getElementById("In").value) + 1;
+        }
+
+        document.getElementById("elevaCuadrado").onclick = function () {
+            document.getElementById("In").value = parseInt(document.getElementById("In").value) * parseInt(document.getElementById("In").value);
+        }
+
+        document.getElementById("porDos").onclick = function () {
+            document.getElementById("In").value = parseInt(document.getElementById("In").value) * 2;
+        }
+
+        document.getElementById("dosALaX").onclick = function () {
+
+            document.getElementById("In").value = 2 ** parseInt(document.getElementById("In").value);
+                 
+        }
+    </script>
+</body>
+</html>

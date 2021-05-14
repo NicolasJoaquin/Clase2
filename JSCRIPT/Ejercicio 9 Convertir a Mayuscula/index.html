@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" type="text/css" href="./estilo.css">
+    <meta charset="utf-8" />
+    <title>Convertir a Mayusculas</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Convertir a mayusculas</h1>
+    </div>
+    <div class="ContenedorPrincipal">
+        <div id="entrada">
+            <label for="nom">Ingrese su Nombre:</label>
+            <input id="nom">
+        </div>
+        <div id="entrada">
+            <label for="ape">Ingrese su Apellido:</label>
+            <input id="ape">
+        </div>
+    </div>
+    <script>
+        document.getElementById("nom").onchange = function () {
+            this.value = this.value.toUpperCase();
+        }
+
+        document.getElementById("ape").onchange = function () {
+            this.value = this.value.toUpperCase();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" type="text/css" href="./estilo.css">
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div class="header">
+        <h1>Introducir un valor en los cuadros de texto y luego pulsar el boton para ejecutar la funcion correspondiente</h1>
+    </div>
+
+    <div class="entradas">
+        <div id="entrada">
+            <label>Entrada 1:</label>
+            <input id="e1">
+        </div>
+        <div id="entrada">
+            <label>Entrada 2:</label>
+            <input id="e2">
+        </div>
+        <div id="entrada">
+            <label>Entrada 3:</label>
+            <input id="e3">
+        </div>
+        <div id="entrada">
+            <label>Resultado:</label>
+            <input id="res">
+        </div>
+    </div>
+
+    <div class="footer">
+        <button id="suma">Suma</button>
+        <button id="promedio">Promedio</button>
+        <button id="mayor">Mayor</button>
+    </div>
+    <script>
+        document.getElementById("suma").onclick = function () {
+            document.getElementById("res").value = parseInt(document.getElementById("e1").value) + parseInt(document.getElementById("e2").value) + parseInt(document.getElementById("e3").value);
+        }
+
+        document.getElementById("promedio").onclick = function () {
+            document.getElementById("res").value = (parseInt(document.getElementById("e1").value) + parseInt(document.getElementById("e2").value) + parseInt(document.getElementById("e3").value)) / 3;
+        }
+
+        document.getElementById("mayor").onclick = function () {
+            if (parseInt(document.getElementById("e1").value) > parseInt(document.getElementById("e2").value)) {
+                if (parseInt(document.getElementById("e1").value) > parseInt(document.getElementById("e3").value)) {
+                    document.getElementById("res").value = parseInt(document.getElementById("e1").value);
+                } else {
+                    document.getElementById("res").value = parseInt(document.getElementById("e3").value);
+                }
+            } else if (parseInt(document.getElementById("e2").value) > parseInt(document.getElementById("e3").value)) {
+                document.getElementById("res").value = parseInt(document.getElementById("e2").value);
+            } else {
+                document.getElementById("res").value = parseInt(document.getElementById("e3").value);
+            }
+
+        }
+    </script>
+</body>
+</html>

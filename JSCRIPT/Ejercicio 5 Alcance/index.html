@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Alcance</title>
+</head>
+<body>
+    <h1>Alcance</h1>
+    <button id="IniI">Inizalización Incorrecta</button>
+    <button id="IniC">Inizalización Correcta</button>
+    <button id="MV">Muestra Variable Global</button>
+
+    <script>
+        document.getElementById("IniI").onclick = function () {
+            var a = prompt("Ingrese valor para la variable (Local)");
+            alert("El valor de la variable Local es: " + a + "");
+            alert("El tipo de la variable Local es: " + typeof a + "");
+        }
+
+        document.getElementById("IniC").onclick = function () {
+            a = prompt("Ingrese valor para la variable (Global)");
+            alert("El valor de la variable Global es: " + a + "");
+            alert("El tipo de la variable Global es: " + typeof a + "");
+        }
+
+        document.getElementById("MV").onclick = function () {
+            if (typeof a == "undefined") {
+                alert("La variable no ha sido asignada");
+            } else {
+                alert("El valor de la variable Global es: " + a + "");
+            }
+                
+        }
+    </script>
+</body>
+</html>
