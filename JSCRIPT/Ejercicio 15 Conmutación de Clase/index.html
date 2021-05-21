@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Conmutación de Clase</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 8px;
+            font-size: 100%;
+        }
+        #divLista{
+            width:400px;
+            height: 400px;
+        }
+        .claseEstilo1 {
+            color: royalblue;
+            border-style: solid;
+            border-color: gray;
+            border-width: 3px;
+            padding: 1%;
+            margin: 2%;
+            background-color: lightgray;
+        }
+        .claseEstilo2 {
+            color: indianred;
+            border-style: solid;
+            border-color: indianred;
+            border-width: 5px;
+            background-color: whitesmoke;
+            /*display: flex;*/
+            /*justify-content: center;*/
+            margin: auto;
+            padding:2%;
+            /*align-items: center;*/
+        }
+        .claseEstilo2 ul {
+            list-style-type: lower-greek;
+            /*color:red;*/
+        }
+
+        .claseEstilo3 {
+            color: white;
+            border-style: solid;
+            border-color: mintcream;
+            border-width: 15px;
+            background-color: black;
+            padding:10%;
+            
+        }
+        .claseEstilo3 ul {
+            list-style-type: upper-roman;
+        }
+
+        .claseEstilo4 {
+            top: 25%;
+            left: 25%;
+            font-size: 18px;
+            position: fixed;
+            color: darkslategrey;
+            border-style: solid;
+            border-color: darkred;
+            border-width: 4px;
+            background-color: orange;
+            padding: 3%;
+        }
+
+            .claseEstilo4 ul {
+                list-style-type: square;
+            }
+    </style>
+</head>
+<body>
+    <h1>Ejemplos de cambios de estilo dinamicamente</h1>
+    <div id="divLista">
+        <h3>Lista con Estilo</h3>
+        <ul>
+            <li>Texto 1</li>
+            <li>Texto 2</li>
+            <li>Texto 3</li>
+        </ul>
+    </div>
+    <div id="barraDeControl">
+        <button id="uno">Estilo 1</button>
+        <button id="dos">Estilo 2</button>
+        <button id="tres">Estilo 3</button>
+        <button id="cuatro">Estilo 4</button>
+    </div>
+
+    <script>
+        document.getElementById("uno").onclick = function () {
+            document.getElementById('divLista').className = "claseEstilo1";
+        }
+
+        document.getElementById("dos").onclick = function () {
+            document.getElementById('divLista').className = "claseEstilo2";
+        }
+
+        document.getElementById("tres").onclick = function () {
+            document.getElementById('divLista').className = "claseEstilo3";
+        }
+
+        document.getElementById("cuatro").onclick = function () {
+            document.getElementById('divLista').className = "claseEstilo4";
+        }
+    </script>
+</body>
+</html>

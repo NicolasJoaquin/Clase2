@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Creacion de Objetos</title>
+    <style>
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 8px;
+            font-size: 100%;
+        }
+        #principal {
+            width: 300px;
+            height: 600px;
+            overflow: auto;
+            border-style: solid;
+            border-color: indianred;
+            background-color: lightgray;
+            margin:auto;
+            /*display:flex;
+            justify-content:center;
+            align-items:center;*/
+        }
+
+        .divObjeto {
+            width:70%;
+            height:30%;
+            color: darkslategray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-style: solid;
+            border-color: darkslategray;
+            border-width: 2px;
+            background-color: mediumslateblue;
+            border-collapse:collapse;
+        }
+    </style>
+</head>
+<body>
+    <button id="crear">Crear</button>
+    <button id="limpiar">Limpiar</button>
+    <button id="info">Info</button>
+    <div id="principal">
+    </div>
+
+    <script>
+        //alert("nodos: " + document.getElementById("principal").childNodes.length + "");
+        
+        document.getElementById("crear").onclick = function () {            var objDiv = document.createElement("div");
+            var textoHtml = "<h1>Elemento creado: ";            textoHtml = textoHtml + document.getElementById("principal").childNodes.length;            textoHtml = textoHtml + "</H1 >";
+            objDiv.className = "divObjeto";            document.getElementById("principal").appendChild(objDiv);
+            objDiv.innerHTML = textoHtml;
+            //alert("nodos: " + document.getElementById("principal").childNodes.length + "");
+        }
+
+        document.getElementById("limpiar").onclick = function () {            while (document.getElementById("principal").childNodes.length > 0) {
+                document.getElementById("principal").removeChild(document.getElementById("principal").childNodes[0]);
+            }        }        document.getElementById("info").onclick = function () {            alert("Longitud del chilNodes: " + document.getElementById("principal").childNodes.length + "");            for (i = 0; i < document.getElementById("principal").childNodes.length; i++) {                alert("Indice " + i + "<h1>Elemento creado: " + i + "</h1 >");
+            }        }
+    </script>
+</body>
+</html>

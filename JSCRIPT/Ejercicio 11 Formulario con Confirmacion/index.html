@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Formulario con Confirmacion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 12px;
+            font-size: 100%;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0%;
+            padding: 0%;
+        }
+        #uno {
+            background-color: lightblue;
+            width: 100%;
+            height: 20%;
+            display: flex;
+            justify-content: space-around;
+            flex-direction:column;
+            align-items: center;
+            /*flex-wrap: wrap;*/
+            margin:auto;
+            padding:5%;
+        }
+        #ContenedorPrincipal {
+            background-color: lightgray;
+            max-height: 50%;
+            width: 50%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10%;
+            border:solid;
+
+        }
+        #header {
+            background-color: wheat;
+            width: 100%;
+            height: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0%;
+        }
+        #footer {
+            background-color: wheat;
+            width: 100%;
+            height: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0%;
+        }
+    </style>
+</head>
+<body>
+    <div id="ContenedorPrincipal">
+        <div id="header">
+            <h1>Confirmación de envío y de reset</h1>
+        </div>
+
+        <div id="uno">
+            <form id="formulario">
+                <label for="nombre">Nombre:</label>
+                <input name="nom" id="nombre" type="text" />
+
+                <label for="apellido">Apellido:</label>
+                <input name="ape" id="apellido" type="text" />
+            </form>
+        </div>
+
+        <div id="footer">
+            <button id="enviar">Enviar</button>
+            <button id="blanquear">Blanquear</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("enviar").onclick = function () {
+            var confirma = confirm("¿Esta seguro de enviar?");
+            if (confirma) {
+                document.getElementById("formulario").method = "get";
+                document.getElementById("formulario").action = "./respuestaForms.html";
+                document.getElementById("formulario").submit();
+                document.getElementById("formulario").reset();
+            } else {
+                return false;
+            }
+        }
+
+        document.getElementById("blanquear").onclick = function () {
+            document.getElementById("nombre").value = "";
+            document.getElementById("apellido").value = "";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Validación con Key Up</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 8px;
+            font-size: 100%;
+        }
+        #principal {
+            width: 600px;
+            height: 600px;
+            overflow: auto;
+            border-style: solid;
+            border-color: indianred;
+            background-color: lightgray;
+            margin: auto;
+            /*display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-direction:column;*/
+        }
+        #arriba {
+            margin-top: 0%;
+            height: 15%;
+            width:100%;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding:2%;
+
+        }
+        #arriba:hover{
+            background-color: darkseagreen;
+            color:palevioletred;
+            font-size: 25px;
+        }
+        #medio {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            
+            height: 70%;
+        }
+        #medio:hover {
+            background-color: coral;
+            color: darkcyan;
+        }
+
+        #abajo {
+            margin-bottom: 0%;
+            height: 15%;
+            width:100%;
+            font-size: 25px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction:row;
+        }
+        #abajo:hover {
+            background-color: palevioletred;
+            color: darkseagreen;
+        }
+    </style>
+</head>
+<body>
+    <div id="principal">
+        <div id="arriba">
+            <h1>Validación de un Input con Key Up</h1>
+        </div>
+        <div id="medio">
+            <form id="formulario">
+                <label for="dia">Ingrese día del mes:</label>
+                <input id="dia" name="day" type="number" />
+                <br />
+                <label for="mes">Ingrese el mes:</label>
+                <input id="mes" name="month" type="number" />
+            </form>
+        </div>
+        <div id="abajo">
+            <button id="enviar">Enviar</button>
+            <button id="resetear">Resetear</button>
+        </div>
+    </div>
+
+        <script>
+
+            //Programo los el key up de los inputs del formulario
+            document.getElementById("dia").onkeyup = function () {
+                if (document.getElementById("dia").value > 31 || document.getElementById("dia").value < 1) {
+                    alert("El día sólo puede ser del 1 al 31");
+                }
+                /*alert("funca");*/
+            }
+
+            document.getElementById("mes").onkeyup = function () {
+                if (document.getElementById("mes").value > 12 || document.getElementById("mes").value < 1) {
+                    alert("El mes sólo puede ser del 1 al 12");
+                }
+            }
+
+            //Programo los botones
+            document.getElementById("enviar").onclick = function () {
+                if (document.getElementById("formulario").checkValidity()) {
+                    document.getElementById("formulario").method = "get";
+                    document.getElementById("formulario").action = "./respuestaForms.html";
+                    document.getElementById("formulario").submit();
+                    document.getElementById("formulario").reset();
+                }
+            }
+
+            document.getElementById("resetear").onclick = function () {
+                document.getElementById("mes").value = "";
+                document.getElementById("dia").value = "";
+            }
+
+        </script>
+
+</body>
+</html>

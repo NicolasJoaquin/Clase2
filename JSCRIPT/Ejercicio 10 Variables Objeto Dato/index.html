@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Variables Objeto Dato</title>
+    <style>
+        tr, td {
+            border-collapse: collapse;
+            border: solid;
+        }
+        div.header {
+            height: 15%;
+            background-color: steelblue;
+            font-size: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #ins {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            background-color: lightgray;
+            height: 70%;
+        }
+        #control {
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            background-color: steelblue;
+            font-size: 32px;
+            margin-bottom:25px;
+        }
+        #presentacion {
+            width: 300px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            color: indianred;
+            border: solid;
+            justify-content: space-around;
+            background-color: lightgray;
+            flex-wrap: wrap;
+            
+            margin: auto;
+            overflow:auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Variables Objeto Dato</div>
+    <div id="ins">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre">
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido">
+
+        <label for="fnacim">Fecha de Nacimiento:</label>
+        <input type="date" id="fnacim">
+
+
+        <button id="crea">Crea Persona</button>
+
+    </div>
+
+    <div id="control">
+        <button id="muestro">Listado de Personas</button>
+        <button id="ocultar">Ocultar Listado</button>
+
+    </div>
+
+    <div id="presentacion">
+
+    </div>
+
+    <script>
+        var objetoPersona = {};
+        var objetoPersona = { nombre: "Pablo", apellido: "Galdi", fechaNac: "01/07/1956" };
+        var arregloPersonas = [objetoPersona];
+        arregloPersonas.push({ nombre: "Jose", apellido: "Witt", fechaNac: "17/01/1985" })
+
+        var objetoPersonas = { personas: arregloPersonas };
+
+        
+        var texto = "<h1> Presentacion</h1>";
+        texto = texto + "<table style='border-collapse:collapse;border:solid'>";
+        /*RECORRE EL ARREGLO Y CONCATENA LA VARIABLE CARGADA PREVIAMENTE*/
+        objetoPersonas.personas.forEach(function (item, indice) {
+            texto = texto + "<tr><td>" + item.nombre + "</td> <td>" + item.apellido + "</td> <td>" + item.fechaNac + "</td></tr>";
+        });
+        /*CONCATENA CON LARGO DEL ARREGLO, MUESTRA Y BLOQUEA EL DISPLAY*/
+        texto = texto + "<H4>Longitud del arreglo de objetos: " + arregloPersonas.length;
+        document.getElementById('presentacion').innerHTML = texto;
+        document.getElementById("presentacion").style.display = "none";
+
+        //arregloPersonas.forEach(function (item, indice) {
+        //    texto = item.nombre + "<br />";
+        //    texto = item.fechaNac + "<br />";
+        //});
+
+
+        //MOSTRAR
+        function mostrar() {
+            var texto = "<h1> Presentacion</h1>";
+            texto = texto + "<table style='border-collapse:collapse;border:solid'>";
+            /*RECORRE EL ARREGLO Y CONCATENA LA VARIABLE CARGADA PREVIAMENTE*/
+            objetoPersonas.personas.forEach(function (item, indice) {
+                texto = texto + "<tr><td>" + item.nombre + "</td> <td>" + item.apellido + "</td> <td>" + item.fechaNac + "</td></tr>";
+            });
+            /*CONCATENA CON LARGO DEL ARREGLO, MUESTRA Y BLOQUEA EL DISPLAY*/
+            texto = texto + "<H4>Longitud del arreglo de objetos: " + arregloPersonas.length;
+            document.getElementById('presentacion').innerHTML = texto;
+            document.getElementById("presentacion").style.display = "block";
+        };
+
+        //OCULTAR
+        function ocultar(){
+            document.getElementById("presentacion").style.display = "none";
+        }
+
+        //CARGA
+        document.getElementById("crea").onclick = function () {
+            if (document.getElementById("nombre").value.length < 1 || document.getElementById("apellido").value.length < 1) {
+                alert("Error en los datos ingresados, ingrese nuevamente...");
+            } else {
+                arregloPersonas.push({ nombre: document.getElementById("nombre").value, apellido: document.getElementById("apellido").value, fechaNac: document.getElementById("fnacim").value });
+
+                mostrar();
+            }
+        }
+
+        //PROGRAMO LOS BOTONES
+        document.getElementById("muestro").onclick = function () {
+            document.getElementById("presentacion").style.display = "block";
+        }
+        document.getElementById("ocultar").onclick = function () {
+            document.getElementById("presentacion").style.display = "none";
+        };
+
+
+    </script>
+</body>
+</html>
