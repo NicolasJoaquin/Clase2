@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Formulario Variable Arreglo de Objetos</title>
+    <script src="../Familias.json" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        /*EJER1*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 8px;
+            font-size: 100%;
+        }
+        html, body, #general {
+            height: 100%;
+            width: 100%;
+            margin: 0%;
+            padding: 0%;
+        }
+
+   
+
+        #formu {
+            width: 100%;
+            height: 70%;
+        }
+        #formulario {
+            background-color: lightblue;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+            #formulario input, select {
+                width: 100%;
+                height:30px;
+                margin: 1%;
+            }
+            
+        
+
+        #header, #footer {
+            height: 15%;
+            width: 100%;
+            background-color: lightgreen;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-size:25px;
+        }
+        #contenedores {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction:column;
+            height:25%;
+            width:30%;
+        }
+    </style>
+</head>
+<body>
+    <div id="general">
+        <div id="header">
+            Formulario de Alta
+        </div>
+
+        <div id="formu">
+            <form action="./respuestaForms.html" target="_blank" id="formulario" method="get">
+                <div id="contenedores">
+                    <label for="codart">Código de Artículo:</label>
+                    <input id="codart" name="Codart" type="text" required />
+                </div>
+
+                <div id="contenedores">
+                    <label for="desc">Descripción:</label>
+                    <input id="desc" name="Desc" type="text" required />
+                </div>
+
+                <div id="contenedores">
+                    <label for="stock">Stock:</label>
+                    <input id="stock" name="Stock" type="number" required />
+                </div>
+
+                <div id="contenedores">
+                    <label for="familia">Familia:</label>
+                    <select id="familia" name="Familia" required>
+                    </select>
+                </div>
+
+                <div id="contenedores">
+                    <label for="fechaAlta">Fecha de Alta:</label>
+                    <input id="fechaAlta" name="FechaAlta" type="date" required />
+                </div>
+
+                <div id="contenedores">
+                    <label> </label>
+                    <input id="enviar" type="submit" />
+                </div>
+            </form>
+        </div>
+
+        <div id="footer">
+            Pie del Formulario
+        </div>
+    </div>
+
+
+    
+
+
+
+    <script>
+            //var ObjFamilia = JSON.parse(Familias);
+            //alert(ObjFamilia[0].val);
+        $(document).ready(function () {            var ObjFamilia = JSON.parse(Familias);
+
+            ObjFamilia.forEach(function (valor, indice) {
+                var objOpcion = document.createElement("option");
+                objOpcion.setAttribute("className", "elementoOptionSelect");
+                objOpcion.setAttribute("value", valor.val);
+                objOpcion.innerHTML = valor.val;
+                document.getElementById("familia").appendChild(objOpcion);
+            });
+
+        });
+    </script>
+
+    <!--<script>
+        var ObjFamilia = JSON.parse(Familias);
+        /*alert(ObjFamilia[0].val);*/
+        document.getElementById("familia").onload = function () {
+            alert("!!!!!")
+            //for (i = 0; i < ObjFamilia.lenght; i++) {
+            //    document.getElementById("familia").innerHTML("<option>" + ObjFamilia[i].val + "<option/>");
+            //}
+        }
+
+    </script>-->
+</body>
+</html>

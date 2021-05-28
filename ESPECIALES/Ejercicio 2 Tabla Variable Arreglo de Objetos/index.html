@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Tabla Variable Arreglo de Objetos</title>
+    <script src="../Articulos.json" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--//EJER2-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 8px;
+            font-size: 100%;
+        }
+
+        html, body, #general {
+            height: 100%;
+            width: 100%;
+            margin: 0%;
+            padding: 0%;
+        }
+
+        #header, #footer {
+            height: 15%;
+            width: 100%;
+            background-color: lightgray;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-size: 25px;
+            font-size: 25px;
+        }
+
+        tbody tr:nth-child(odd) {
+            background: rgba(0,0,0,.2);
+        }
+
+        tbody td {
+            width: 16%;
+            height:80px;
+        }
+
+        thead, tfoot {
+            background-color: lightpink;
+            font-size: 18px;
+            height: 80px;
+        }
+        /*tr{
+            width:100%;
+        }*/
+
+        thead,tbody,tfoot, table{
+            width:100%;
+        }
+
+        #bod {
+            background-color: aquamarine;
+            width: 100%;
+            height:100%;
+          
+        }
+        table {
+            width: 100%;
+            height: 100px;
+        }
+        #tabla {
+            width: 100%;
+            height:70%;
+            overflow:auto;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="general">
+        <div id="header">
+            <button id="cargar">Cargar Articulos</button>
+            <button id="vaciar">Vaciar Articulos</button>
+        </div>
+
+        <div id="tabla">
+            <table>
+                <thead>
+                    <tr>
+                        <td>
+                            Cod.Art.
+                        </td>
+                        <td>
+                            Familia
+                        </td>
+                        <td>
+                            U.M.
+                        </td>
+                        <td>
+                            Descripción
+                        </td>
+                        <td>
+                            Fecha Alta
+                        </td>
+                        <td>
+                            Stock
+                        </td>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td>
+                            C.A.
+                        </td>
+                        <td>
+                            F.
+                        </td>
+                        <td>
+                            U.M.
+                        </td>
+                        <td>
+                            D.
+                        </td>
+                        <td>
+                            F.A.
+                        </td>
+                        <td>
+                            S.
+                        </td>
+                    </tr>
+                </tfoot>
+
+                <tbody id="bod">
+                </tbody>
+            </table>
+        </div>
+
+        <div id="footer">
+            Pié
+        </div>
+    </div>
+
+    <script>
+       
+        $(document).ready(function () {            var ObjArticulos = JSON.parse(Articulos);
+
+            $("#cargar").click(function () {
+                ObjArticulos.articulos.forEach(function (valor, indice) {
+                    var objTr = document.createElement("tr");
+                    var objTd = document.createElement("td");                    objTd.setAttribute("campo-dato", "articulos_codArt");                    objTd.innerHTML = valor.codart;                    objTr.appendChild(objTd);                    objTd = document.createElement("td");                    objTd.setAttribute("campo-dato", "articulos_familia");                    objTd.innerHTML = valor.familia;                    objTr.appendChild(objTd);                    objTd = document.createElement("td");                    objTd.setAttribute("campo-dato", "articulos_um");                    objTd.innerHTML = valor.um;                    objTr.appendChild(objTd);                    objTd = document.createElement("td");                    objTd.setAttribute("campo-dato", "articulos_desc");                    objTd.innerHTML = valor.desc;                    objTr.appendChild(objTd);                    objTd = document.createElement("td");                    objTd.setAttribute("campo-dato", "articulos_fechaAlta");                    objTd.innerHTML = valor.fechaAlta;                    objTr.appendChild(objTd);                    objTd = document.createElement("td");                    objTd.setAttribute("campo-dato", "articulos_stock");                    objTd.innerHTML = valor.stock;                    objTr.appendChild(objTd);
+                    document.getElementById("bod").appendChild(objTr);
+
+
+                });
+            });
+
+            $("#vaciar").click(function () {
+                $("#bod").empty();            });
+        });
+    </script>
+</body>
+</html>

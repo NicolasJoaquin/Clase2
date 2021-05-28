@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Ventana Modal</title>
+    <script src="../Familias.json" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        /*EJER3*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 8px;
+            font-size: 100%;
+        }
+        html, body, .general {
+            height: 100%;
+            width: 100%;
+            margin: 0%;
+            padding: 0%;
+        }
+        #formu {
+            width: 100%;
+            height: 70%;
+            background-color:slategray;
+        }
+        #formulario{
+            margin-top:0px;
+        }
+        #header, #footer {
+            height: 15%;
+            width: 100%;
+            background-color: lightgreen;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-size: 25px;
+        }
+        #contenedores {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            height: 41px;
+            width: 100%;
+        }
+        .general {
+            visibility: hidden;
+        }
+        .general2 {
+            visibility: visible;
+            top:10%;
+            left:25%;
+            /*margin-left: 25%;
+            margin-top: 1%;*/
+            position: fixed;
+            width: 50%;
+            height: 50%;
+            border-style: solid;
+            display: block;
+        }
+        #arafue {
+            width: 50%;
+            height: 50%;
+            border-style: solid;
+            background-color: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction:column;
+        }
+
+        .bloq{
+            pointer-events:none;
+            opacity:0.3;
+        }
+        .nobloq {
+            pointer-events: auto;
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="arafue">
+        <h1>CONTENEDOR:</h1>
+        <button id="abrir">Abre DIV Modal</button>
+    </div>
+
+    <div class="general" id="general">
+        <div id="header">
+            Formulario de Alta
+            <button id="cerrar">Cerrar Formulario</button>
+        </div>
+
+        <div id="formu">
+            <form action="./respuestaForms.html" target="_blank" id="formulario" method="get">
+                <div id="contenedores">
+                    <label for="codart">Código de Artículo:</label>
+                    <input id="codart" name="Codart" type="text" required />
+                </div>
+
+                <div id="contenedores">
+                    <label for="desc">Descripción:</label>
+                    <input id="desc" name="Desc" type="text" required />
+                </div>
+
+                <div id="contenedores">
+                    <label for="stock">Stock:</label>
+                    <input id="stock" name="Stock" type="number" required />
+                </div>
+
+                <div id="contenedores">
+                    <label for="familia">Familia:</label>
+                    <select id="familia" name="Familia" required>
+                    </select>
+                </div>
+
+                <div id="contenedores">
+                    <label for="fechaAlta">Fecha de Alta:</label>
+                    <input id="fechaAlta" name="FechaAlta" type="date" required />
+                </div>
+
+                <div id="contenedores">
+                    <label> </label>
+                    <input id="enviar" type="submit" />
+                </div>
+            </form>
+        </div>
+
+        <div id="footer">
+            Pie del Formulario
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            var ObjFamilia = JSON.parse(Familias);
+
+            ObjFamilia.forEach(function (valor, indice) {
+                var objOpcion = document.createElement("option");
+                objOpcion.setAttribute("className", "elementoOptionSelect");
+                objOpcion.setAttribute("value", valor.val);
+                objOpcion.innerHTML = valor.val;
+                document.getElementById("familia").appendChild(objOpcion);
+
+                $("#abrir").click(function () {
+                    document.getElementById("general").className = "general2";
+                    document.getElementById("arafue").className = "bloq"
+                });
+
+                $("#cerrar").click(function () {
+                    document.getElementById("general").className = "general";
+                    document.getElementById("arafue").className = "nobloq"
+                });
+                    //document.getElementById('ventanaModal').className = "ventanaModalApagado";
+            });        });
+    </script>
+</body>
+</html>
