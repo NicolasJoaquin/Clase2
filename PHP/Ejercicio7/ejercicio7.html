@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Ejercicio 7 Ajax</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="scripts.js"></script>
+    <style>
+        * {
+        }
+
+        body, html {
+            height: 100%;
+            width: 100%;
+            margin: auto;
+        }
+
+        #general {
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            /*display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;*/
+            background-color: cornflowerblue;
+        }
+
+        #entrada {
+            border-style: solid;
+            float: left;
+            width: 500px;
+            height: 300px;
+            background-color: gray;
+        }
+
+        #encriptar {
+            border-style: solid;
+            float: left;
+            width: 500px;
+            height: 300px;
+            background-color: deepskyblue;
+        }
+
+        #resultado {
+            border-style: solid;
+            float: left;
+            width: 500px;
+            height: 300px;
+            background-color: darkolivegreen;
+        }
+
+        #estadoDeRequerimiento {
+            border-style: solid;
+            float: left;
+            width: 500px;
+            height: 300px;
+            background-color: indianred;
+        }
+
+        .esperando {
+            color: white;
+            font-size: 20px;
+            background-color: yellow;
+        }
+
+        .especial {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="general">
+        <div id="entrada">
+            <h3>Dato de entrada:</h3>
+            <input id="data" name="dato" />
+        </div>
+        <div id="encriptar">
+            <h3>Encriptar</h3>
+        </div>
+        <div id="resultado">
+            <h3>Resultado:</h3>
+        </div>
+        <div id="estadoDeRequerimiento">
+            <h3>Estado del requerimiento:</h3>
+        </div>
+    </div>
+    <script>
+       
+
+        $("#encriptar").click(function () {
+            $("#resultado").empty(); //vacia el cuadro de resultado.
+            $("#resultado").addClass("esperando"); //le cambia provisorio de estilo del contenedor
+            $("#resultado").html("<h2>Esperando respuesta ..</h2>");//Escribe mensaje provisorio
+            $("#estadoDeRequerimiento").empty(); //Vacía el div que indica el estado el requerimiento
+            $("#estadoDeRequerimiento").addClass("esperando"); 
+            $("#estadoDeRequerimiento").append("<h4>Estado del requerimiento: </h4>");//adiciona html al div de estado
+
+            $.ajax({
+                type: "POST",
+                url: "./ejercicio7.php",
+                data: { clave: $("#data").val() },
+                success: function (respuestaDelServer, estado) {
+                    $("#resultado").removeClass("esperando");
+                    $("#resultado").html("<h1>Resultado: </h1><h4>" + respuestaDelServer + "</h4>");
+                    $("#estadoDeRequerimiento").removeClass("esperando");
+                    $("#estadoDeRequerimiento").append("<h4>" + estado + "</h4>");
+                },
+                error: function () {
+                    $("#resultado").html("<h1>PROBLEMA</h4>");
+
+                }
+
+            }); //cierra ajax
+        });
+    </script>
+</body>
+</html>

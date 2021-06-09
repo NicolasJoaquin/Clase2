@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Form to JSON</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="scripts.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            width: 100%;
+            margin: auto;
+        }
+
+        #general {
+            background-color: lightgray;
+            height: 100%;
+            width: 100%;
+        }
+
+        #header, #footer {
+            height: 10%;
+            width: 100%;
+            background-color: dodgerblue;
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #footer {
+            margin-bottom: 0px;
+        }
+
+        #medio {
+            height: 80%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        #afuera {
+            width: 50%;
+            height: 72%;
+            /*border-style: solid;*/
+            border-radius: 20px;
+            background-color: lightgreen;
+            padding: 2%;
+            position: fixed;
+            margin-top: 8%;
+            margin-left: 25%;
+        }
+
+        #headerModal {
+            width: 96%;
+            height: 12%;
+            margin-bottom: 3%;
+            border-radius: 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background-color: grey;
+            padding-right: 3%;
+        }
+
+        #abrirVentana {
+            margin-top: 30px;
+        }
+
+        #cerrar {
+            height: 80%;
+            font-size: 25px;
+            color: red;
+        }
+
+        #formulario {
+            height: 70%;
+            display: flex;
+            flex-direction: column;
+        }
+
+            #formulario input {
+                width: 50%;
+            }
+
+        #enviar {
+            width: 25%;
+        }
+
+        #respuesta {
+            width: 96%;
+            height: 25%;
+        }
+        .sinEsconder {
+            visibility: visible;
+        }
+        .escondido {
+            visibility: hidden;
+        }
+        .bloq {
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        .noBloq {
+            pointer-events: auto;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="afuera" class="escondido">
+        <div id="headerModal">
+            <button id="cerrar">X</button>
+        </div>
+        <div id="cuerpo">
+            <div id="formulario" >
+                <label for="usuario">Usuario:</label>
+                <input id="usuario" name="user" type="text" required />
+                <label for="contrasenia">Contrasenia:</label>
+                <input id="contrasenia" name="pass" type="text" required />
+                <label for="apellido">Apellido:</label>
+                <input id="apellido" name="ape" type="text" required />
+                <label for="nombre">Nombre(s):</label>
+                <input id="nombre" name="name" type="text" required />
+                <label for="fecha">Nombre(s):</label>
+                <input id="fecha" name="nacimiento" type="date" required />
+
+                <button  id="enviar">Enviar</button>
+
+            </div>
+            <div id="respuesta">
+               
+            </div>
+        </div>
+    </div>
+
+   <!--lk-->
+
+    <div id="general">
+        <div id="header">
+            Formulario a JSON
+        </div>
+        <div id="medio">
+            <button id="abrirVentana">Ventana Modal</button>
+        </div>
+        <div id="footer">
+            Footer
+        </div>
+    </div>
+
+    <script>
+        //click de ventana modal
+        $("#abrirVentana").click(function () {
+            document.getElementById("afuera").className = "sinEsconder";
+            document.getElementById("general").className = "bloq";
+        });
+        //click cierre
+        $("#cerrar").click(function () {
+            document.getElementById("afuera").className = "escondido";
+            document.getElementById("general").className = "noBloq";
+        });
+
+        // envio de formulario
+        $("#enviar").click(function () {
+            if (window.confirm("¿Seguro de enviar?")) {
+                $("#respuesta").empty(); //vacia el cuadro de resultado.
+                //$("#resultado").addClass("esperando"); //le cambia provisorio de estilo del contenedor
+                $("#respuesta").append("<h2>Esperando respuesta ..</h2>");//Escribe mensaje provisorio
+
+                $.ajax({
+                    type: "POST",
+                    url: "./ejercicio8.php",
+                    data: { user: $("#usuario").val(), pass: $("#contrasenia").val(), ape: $("#apellido").val(), name: $("#nombre").val(), fecha: $("#fecha").val() },
+                    success: function (respuestaDelServer, estado) {
+                        //$("#respuesta").removeClass("esperando");
+                        $("#respuesta").html("<h1>Resultado: </h1><h4>" + respuestaDelServer + "</h4>");
+
+                    },
+                    error: function () {
+                        $("#respuesta").html("<h1>PROBLEMA</h4>");
+
+                    }
+
+                }); //cierra ajax
+            }
+         });
+            
+            
+    </script>
+</body>
+</html>

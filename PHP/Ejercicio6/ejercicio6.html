@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Ejercicio 6 Formulario Encriptado</title>
+    <style>
+        * {
+        }
+
+        body, html {
+            height: 100%;
+            width: 100%;
+            margin: auto;
+        }
+
+        #general {
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="general">
+        <h2>Formulario Encriptado:</h2>
+        <form action="./ejercicio6.php" method="post">
+            <label for="clave">Ingrese la clave a encriptar:</label><br />
+            <input type="text" id="clave" name="pass" /><br />
+
+            <button type="submit">Obtener Encriptaci&oacute;n</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
