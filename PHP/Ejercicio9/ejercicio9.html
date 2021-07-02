@@ -349,8 +349,8 @@
             formularioAlta.css("visibility", "hidden");
             respuestaServer.css("visibility", "hidden");
 
-            //btnEnviarModi.attr("disabled", true);
-            //btnEnviarAlta.attr("disabled", true);
+            btnEnviarModi.attr("disabled", true);
+            btnEnviarAlta.attr("disabled", true);
 
             //BOTONES
             $("#codArtModi").keyup(function () { //KEYUPS DE MODI
@@ -649,8 +649,8 @@
                         var objJson = JSON.parse(rtaJson);
                         //$("#bod").html(objJson["articulos"][1]["codArt"]);
                         var objTbDatos = $("#bod");
-                        $("#bod").append(" " + respuestaDelServer + "...AAAA");
-                        $("#bod").append("DALE FORROOOOOOOOOOOOOOOOOOOOOO");
+                        //$("#bod").append(" " + respuestaDelServer + "...AAAA");
+                        //$("#bod").append("DALE FORROOOOOOOOOOOOOOOOOOOOOO");
                         //objTbDatos.append(objJson.articulos[1].familia + "<br/>" + objJson.articulos[1].codArt);
                         //objTbDatos.html(objJson["articulos"][1]["familia"]);
                         objJson.articulos.forEach(function (argValor, argIndice) {
@@ -714,7 +714,7 @@
 
                             objTbDatos.append(objTr);
                         });//cierra el forEach
-                        $("#bod").append(" " + respuestaDelServer + "...AAAA");
+                        //$("#bod").append(" " + respuestaDelServer + "...AAAA");
                         $("#totalRegistros").html("Nro de registros: " + ((objJson.articulos.length) - 1));
                         //$("#footer").html(" " + respuestaDelServer + "...AAAA");
                     }//cierra funcion asignada al success
