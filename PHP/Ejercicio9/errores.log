@@ -1,0 +1,20 @@
+
+<br />Se ha hecho con exito el update del articulo!
+<br />Se ha hecho con exito el update del articulo!
+<br />Se ha hecho con exito el update del articulo!
+<br />Se ha hecho con exito el update del articulo!
+<br />Se ha hecho con exito el update del articulo!
+<br />Se ha hecho con exito el update del articulo!
+<br />Se ha cargado con exito el nuevo articulo!
+<br />Se ha cargado con exito el nuevo articulo!
+<br />Falló la ejecución de parametros simples: (1406) Data too long for column 'codArt' at row 1
+
+<br />Se ha hecho con exito el update del articulo!
+<br />Datos obtenidos!
+{"articulos":[{"codArt":"LS9T","familia":"Enlatados","um":"Lata","descripcion":"At\u00fan Desmenuzado","fechaAlta":"2016-09-03","saldoStock":244}],"cuenta":1}
+<br />Datos obtenidos!
+{"articulos":[{"codArt":"LS9T","familia":"Enlatados","um":"Lata","descripcion":"At\u00fan Desmenuzado","fechaAlta":"2016-09-03","saldoStock":244},{"codArt":"PE5E","familia":"Enlatados","um":"Lata","descripcion":"Arvejas Orig. Nacional","fechaAlta":"2020-02-12","saldoStock":186},{"codArt":"PN44","familia":"Enlatados","um":"Lata","descripcion":"Sardinas La Campagnola","fechaAlta":"2009-03-12","saldoStock":165}],"cuenta":3}
+<br />Datos obtenidos!
+{"articulos":[{"codArt":"LS9T","familia":"Enlatados","um":"Lata","descripcion":"At\u00fan Desmenuzado","fechaAlta":"2016-09-03","saldoStock":244}],"cuenta":1}
+
+<br />Se ha hecho con exito el update del articulo!
