@@ -217,7 +217,7 @@
             $filtroUm = $_POST['filtroUm'];
             $filtroDescripcion = $_POST['filtroDescripcion'];
             $filtroFechaAlta = $_POST['filtroFechaAlta'];
-            $filtroStock = $_POST['filtroStock'];
+            //$filtroStock = $_POST['filtroStock'];
             
 
             $likeVarCodArt ="%" . $filtroCodigo . "%";
@@ -225,8 +225,8 @@
             $likeVarUm ="%" . $filtroUm . "%";
             $likeVarDescripcion ="%" . $filtroDescripcion . "%";
             $likeVarFechaAlta ="%" . $filtroFechaAlta . "%";
-            $likeVarStock ="%" . $filtroStock . "%";
-            if ( !$sentencia->bind_param('ssssss',$likeVarCodArt,$likeVarFamilia,$likeVarUm,$likeVarDescripcion,$likeVarFechaAlta,$likeVarStock) ) {
+            //$likeVarStock ="%" . $filtroStock . "%";
+            if ( !$sentencia->bind_param('sssss',$likeVarCodArt,$likeVarFamilia,$likeVarUm,$likeVarDescripcion,$likeVarFechaAlta) ) {
                 $respuesta = $respuesta . "<br />Falló la vinculación de parámetros simples: (" . $sentencia->errno . ") " . $sentencia->error;
                 $puntero = fopen("./errores.log","a");
                 fwrite($puntero, $respuesta);
