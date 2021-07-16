@@ -8,6 +8,6 @@
 
 	session_destroy();
 
-	header('Location:./formularioDeLogin.html');
+	header('Location:./FormularioDeLogin.html');
 
 ?>
