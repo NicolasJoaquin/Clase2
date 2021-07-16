@@ -43,7 +43,7 @@
     if($id == "alta"){      // ALTA DE ARTICULO
         if( !$sentencia = $mysqli->prepare("insert into articulos (codArt,familia,descripcion,um,fechaAlta,saldoStock) 
         values (?,?,?,?,?,?)") ){
-            $respuesta = $respuesta . "<br />Falló la preparación del template: (" . $mysqli->errno . ") " . $mysqli->error;
+            $respuesta = $respuesta . "<br />FallÃ³ la preparaciÃ³n del template: (" . $mysqli->errno . ") " . $mysqli->error;
             $puntero = fopen("./errores.log","a");
             fwrite($puntero, $respuesta);
             fwrite($puntero, "\n");
@@ -58,7 +58,7 @@
             $saldoStock = $_POST['saldoStock'];
             
             if( !$sentencia->bind_param('sssssi', $codArt, $familia, $descripcion, $um, $fechaAlta, $saldoStock) ){
-                $respuesta = $respuesta . "<br />Falló la vinculación de parámetros simples: (" . $sentencia->errno . ") " . $sentencia->error;
+                $respuesta = $respuesta . "<br />FallÃ³ la vinculaciÃ³n de parÃ¡metros simples: (" . $sentencia->errno . ") " . $sentencia->error;
                 $puntero = fopen("./errores.log","a");
                 fwrite($puntero, $respuesta);
                 fwrite($puntero, "\n");
@@ -66,7 +66,7 @@
                 die();
             }else{
                 if( !$sentencia->execute() ){
-                    //$respuesta = $respuesta . "<br />Falló la ejecución de parametros simples: (" . $sentencia->errno . ") " . $sentencia->error;
+                    //$respuesta = $respuesta . "<br />FallÃ³ la ejecuciÃ³n de parametros simples: (" . $sentencia->errno . ") " . $sentencia->error;
                     $puntero = fopen("./errores.log","a");
                     fwrite($puntero, "fallo en la ejecucion del alta");
                     fwrite($puntero, "\n");
@@ -120,7 +120,7 @@
 
     if($id == "modificar"){     //MODIFICAR
         if( !$sentencia = $mysqli->prepare("update articulos set codArt=?,familia=?,descripcion=?,um=?,fechaAlta=?,saldoStock=? where codArt=?;") ){
-            $respuesta = $respuesta . "<br />Falló la preparación del template MODI: (" . $mysqli->errno . ") " . $mysqli->error;
+            $respuesta = $respuesta . "<br />FallÃ³ la preparaciÃ³n del template MODI: (" . $mysqli->errno . ") " . $mysqli->error;
             $puntero = fopen("./errores.log","a");
             fwrite($puntero, $respuesta);
             fwrite($puntero, "\n");
@@ -135,7 +135,7 @@
             $saldoStock = $_POST['saldoStock'];
             
             if( !$sentencia->bind_param('sssssis', $codArt,$familia,$descripcion,$um,$fechaAlta,$saldoStock,$codArt) ){
-                $respuesta = $respuesta . "<br />Falló la vinculación de parámetros simples MODI: (" . $sentencia->errno . ") " . $sentencia->error;
+                $respuesta = $respuesta . "<br />FallÃ³ la vinculaciÃ³n de parÃ¡metros simples MODI: (" . $sentencia->errno . ") " . $sentencia->error;
                 $puntero = fopen("./errores.log","a");
                 fwrite($puntero, $respuesta);
                 fwrite($puntero, "\n");
@@ -143,7 +143,7 @@
                 die();
             }else{
                 if( !$sentencia->execute() ){
-                    $respuesta = $respuesta . "<br />Falló la ejecución de parametros simples MODI: (" . $sentencia->errno . ") " . $sentencia->error;
+                    $respuesta = $respuesta . "<br />FallÃ³ la ejecuciÃ³n de parametros simples MODI: (" . $sentencia->errno . ") " . $sentencia->error;
                     fwrite($puntero, $respuesta);
                     fwrite($puntero, "\n");
                     fclose($puntero);
@@ -204,7 +204,7 @@
         //$sql=$sql . "saldoStock LIKE ?";
         
         if ( !($sentencia = $mysqli->prepare($sql)) ) {
-            $respuesta = $respuesta . "<br />Falló la preparación del template: (" . $mysqli->errno . ") " . $mysqli->error;
+            $respuesta = $respuesta . "<br />FallÃ³ la preparaciÃ³n del template: (" . $mysqli->errno . ") " . $mysqli->error;
             $puntero = fopen("./errores.log","a");
             fwrite($puntero, $respuesta);
             fwrite($puntero, "\n");
@@ -217,7 +217,7 @@
             $filtroUm = $_POST['filtroUm'];
             $filtroDescripcion = $_POST['filtroDescripcion'];
             $filtroFechaAlta = $_POST['filtroFechaAlta'];
-            //$filtroStock = $_POST['filtroStock'];
+            $filtroStock = $_POST['filtroStock'];
             
 
             $likeVarCodArt ="%" . $filtroCodigo . "%";
@@ -225,9 +225,9 @@
             $likeVarUm ="%" . $filtroUm . "%";
             $likeVarDescripcion ="%" . $filtroDescripcion . "%";
             $likeVarFechaAlta ="%" . $filtroFechaAlta . "%";
-            //$likeVarStock ="%" . $filtroStock . "%";
-            if ( !$sentencia->bind_param('sssss',$likeVarCodArt,$likeVarFamilia,$likeVarUm,$likeVarDescripcion,$likeVarFechaAlta) ) {
-                $respuesta = $respuesta . "<br />Falló la vinculación de parámetros simples: (" . $sentencia->errno . ") " . $sentencia->error;
+            $likeVarStock ="%" . $filtroStock . "%";
+            if ( !$sentencia->bind_param('ssssss',$likeVarCodArt,$likeVarFamilia,$likeVarUm,$likeVarDescripcion,$likeVarFechaAlta,$likeVarStock) ) {
+                $respuesta = $respuesta . "<br />FallÃ³ la vinculaciÃ³n de parÃ¡metros simples: (" . $sentencia->errno . ") " . $sentencia->error;
                 $puntero = fopen("./errores.log","a");
                 fwrite($puntero, $respuesta);
                 fwrite($puntero, "\n");
@@ -235,7 +235,7 @@
                 die();
             }else{
                 if ( !$sentencia->execute() ) {
-                    $respuesta = $respuesta . "<br />Falló la ejecución de parametros simples: (" . $sentencia->errno . ") " . $sentencia->error;
+                    $respuesta = $respuesta . "<br />FallÃ³ la ejecuciÃ³n de parametros simples: (" . $sentencia->errno . ") " . $sentencia->error;
                     fwrite($puntero, $respuesta);
                     fwrite($puntero, "\n");
                     fclose($puntero);
